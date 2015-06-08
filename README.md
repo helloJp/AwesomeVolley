@@ -17,7 +17,7 @@ dependencies {
 }
 ```
 
-##2. JsonObjectRequestWithCookie can save or send cookie from http headers.
+##1. JsonObjectRequestWithCookie can save or send cookie from http headers.
 code is just like volley :
 ``` java
   String urlStr = ".....";
@@ -37,7 +37,8 @@ code is just like volley :
         requestQueue.add(jsonObjectRequest);
 ```
 
-## 3.upload files in same time
+##2.upload files in same time
+you can also put string params when you are uploading files .
 ``` java
 String urlStr = "......";
         MultiPartJSONRequest multiPartRequest = new MultiPartJSONRequest(Request.Method.POST, urlStr, null,
