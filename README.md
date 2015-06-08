@@ -1,14 +1,25 @@
 # Volley
 enhance volley with cookie &amp; upload files
-##1.put 3 jar into module.
-HttpClient 4.x
-HttpClient 4.x
-HttpCore 4.x
+Add Gradle dependency:
+
+
+### project has contained 3 jar
+| Jar        |
+| --------   |
+| HttpClient 4.x |
+| HttpClient 4.x |  
+| HttpCore 4.x   |
 you can download from http://hc.apache.org/
 
-##2. JsonObjectRequestWithCookie can save or send cookie from http head.
+```gradle
+dependencies {
+   compile ''
+}
+```
+
+##2. JsonObjectRequestWithCookie can save or send cookie from http headers.
 code is just like volley :
-``java 
+``` java
   String urlStr = ".....";
         JsonObjectRequestWithCookie jsonObjectRequest = new JsonObjectRequestWithCookie(Request.Method.GET, urlStr, new Response.Listener<JSONObject>() {
             @Override
@@ -24,10 +35,10 @@ code is just like volley :
         jsonObjectRequest.sendCookie();
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonObjectRequest);
-``
+```
 
 ## 3.upload files in same time
-`` java
+``` java
 String urlStr = "......";
         MultiPartJSONRequest multiPartRequest = new MultiPartJSONRequest(Request.Method.POST, urlStr, null,
                 new Response.Listener<JSONObject>() {
@@ -56,5 +67,4 @@ String urlStr = "......";
         multiPartRequest.setCookie();
         RequestQueue requestQueue = Volley.newRequestQueue(this, new MultiPartStack());
         requestQueue.add(multiPartRequest);
-``
-
+```
