@@ -14,5 +14,9 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/VolleyResponseListener.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/utils/PreferencesUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/volley" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/volley/libs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/volley/libs/httpclient-4.3.5.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/volley/libs/httpcore-4.4.1.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/volley/libs/httpmime-4.3.5.jar" charset="UTF-8" />
   </component>
 </project>
