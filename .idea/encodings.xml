@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/libs/httpclient-4.3.5.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/libs/httpcore-4.4.1.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/libs/httpmime-4.3.5.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/BitmapCache.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/JsonObjectRequestWithCookie.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/MultiPartJSONRequest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/MultiPartRequest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/MultiPartStack.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/MultiPartStringRequest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/StringResponseListener.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/enhance/VolleyResponseListener.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/me/jp/volley/utils/PreferencesUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/volley" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/volley/android-artifacts.gradle" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/volley/bintray-publish.gradle" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/volley/central-publish.gradle" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/volley/gradle.properties" charset="GBK" />
     <file url="file://$PROJECT_DIR$/volley/libs" charset="GBK" />
     <file url="file://$PROJECT_DIR$/volley/libs/httpclient-4.3.5.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/volley/libs/httpcore-4.4.1.jar" charset="UTF-8" />

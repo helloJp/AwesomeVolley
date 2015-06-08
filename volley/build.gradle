@@ -6,15 +6,18 @@
 // is used by projects that depend on Volley but define their own
 // tools versions across all dependencies to ensure a consistent build.
 apply plugin: 'com.android.library'
-apply from: 'rules.gradle'
+
 
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.0.1'
+        //自动化maven打包插件
         classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        //自动上传至Bintray平台插件
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
     }
 }
 
@@ -30,6 +33,10 @@ dependencies {
     compile files('libs/httpclient-4.3.5.jar')
     compile files('libs/httpmime-4.3.5.jar')
     compile files('libs/httpcore-4.4.1.jar')
-
 }
+
+apply from: 'rules.gradle'
+apply from: 'android-artifacts.gradle'
+apply from: 'central-publish.gradle'
+apply from: 'bintray-publish.gradle'
 
