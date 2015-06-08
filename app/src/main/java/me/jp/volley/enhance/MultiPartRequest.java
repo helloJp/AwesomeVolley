@@ -4,12 +4,11 @@ import java.io.File;
 import java.util.Map;
 
 /**
- * @author ZhiCheng Guo
- * @version 2014年10月7日 上午11:04:36
+ * Created by JiangPing on 2015/6/4.
  */
 public interface MultiPartRequest {
 
-    public void addFileUpload(String param, File[] files);
+    public void addFilesUpload(String param, File[] files);
 
     public void addFileUpload(String param, File file);
 

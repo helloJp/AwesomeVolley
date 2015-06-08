@@ -71,7 +71,7 @@ public class MultiPartJSONRequest extends JsonRequest<JSONObject> implements
     }
 
     @Override
-    public void addFileUpload(String param, File[] files) {
+    public void addFilesUpload(String param, File[] files) {
         filesUploads.put(param, files);
     }
 
@@ -134,7 +134,7 @@ public class MultiPartJSONRequest extends JsonRequest<JSONObject> implements
      * request with cookie
      */
     public void setCookie() {
-        //读取本地cookie
+        //read local cookie
         PreferencesUtils.PREFERENCE_NAME = Constants.PREFS_USER_INFO;
         String cookie = PreferencesUtils.getString(App
                 .getInstance().getApplicationContext(), "cookie", "");

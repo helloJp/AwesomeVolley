@@ -21,9 +21,8 @@ import me.jp.volley.common.Constants;
 import me.jp.volley.utils.PreferencesUtils;
 
 /**
- * 提取cookie并保存到本地
- *
- * @author ChenLong
+ * jsonObject request with cookie
+ * Created by JiangPing on 2015/6/4.
  */
 public class JsonObjectRequestWithCookie extends Request<JSONObject> {
 
@@ -67,7 +66,6 @@ public class JsonObjectRequestWithCookie extends Request<JSONObject> {
                     // 去掉cookie末尾的分号
                     cookieFromResponse = cookieFromResponse.substring(11,
                             cookieFromResponse.length() - 1);
-                    // LogUtil.i("getcookie:" + cookieFromResponse);
                     // 将cookie字符串添加到jsonObject中，该jsonObject会被deliverResponse递交，调用请求时则能在onResponse中得到
                     // jsonObject.put("Cookie", cookieFromResponse);
                     // 将cookie保存到本地
@@ -100,9 +98,9 @@ public class JsonObjectRequestWithCookie extends Request<JSONObject> {
      * 请求时添加cookie
      */
     public void sendCookie() {
+        //读取本地保存的cookie，添加到头信息中去
         PreferencesUtils.PREFERENCE_NAME = Constants.PREFS_USER_INFO;
         String cookie = PreferencesUtils.getString(App.getInstance().getApplicationContext(), "cookie", "");
-        // LogUtil.i("sendcookie:" + cookie);
         if ("".equals(cookie)) {
             return;
         }

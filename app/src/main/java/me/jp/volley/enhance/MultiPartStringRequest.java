@@ -43,6 +43,7 @@ public class MultiPartStringRequest extends Request<String> implements
 
 	private final Listener<String> mListener;
 	/* To hold the parameter name and the File to upload */
+	private Map<String, File[]> filesUploads = new HashMap<String, File[]>();
 	private Map<String, File> fileUploads = new HashMap<String, File>();
 
 	/* To hold the parameter name and the string content to upload */
@@ -68,6 +69,11 @@ public class MultiPartStringRequest extends Request<String> implements
 		mListener = listener;
 	}
 
+	@Override
+	public void addFilesUpload(String param, File[] files) {
+		filesUploads.put(param, files);
+	}
+
 	public void addFileUpload(String param, File file)
 	{
 		fileUploads.put(param, file);
@@ -78,6 +84,10 @@ public class MultiPartStringRequest extends Request<String> implements
 		stringUploads.put(param, content);
 	}
 
+	@Override
+	public Map<String, File[]> getFilesUploads() {
+		return filesUploads;
+	}
 	/**
 	 * 要上传的文件
 	 */
@@ -85,7 +95,6 @@ public class MultiPartStringRequest extends Request<String> implements
 	{
 		return fileUploads;
 	}
-
 	/**
 	 * 要上传的参数
 	 */

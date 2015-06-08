@@ -1,9 +1,23 @@
 package me.jp.volley;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+import me.jp.volley.enhance.JsonObjectRequestWithCookie;
+import me.jp.volley.enhance.MultiPartJSONRequest;
+import me.jp.volley.enhance.MultiPartStack;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -14,25 +28,55 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+
+    private void jsonRequestWithCookie() {
+        String urlStr = ".....";
+        JsonObjectRequestWithCookie jsonObjectRequest = new JsonObjectRequestWithCookie(Request.Method.GET, urlStr, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        }, null);
+        //catch Cookie from http head
+        // jsonObjectRequest.saveCookie(true);
+        jsonObjectRequest.sendCookie();
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonObjectRequest);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    private void batchUploadFiles() {
+        String urlStr = "......";
+        MultiPartJSONRequest multiPartRequest = new MultiPartJSONRequest(Request.Method.POST, urlStr, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        }) {
+            //upload multi files
+            public Map<String, File[]> getFilesUploads() {
+                Map<String, File[]> params = new HashMap<>();
+                params.put("images[]", new File[]{new File("absolute file path"), new File("absolute file path")});
+                return params;
+            }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+            //string params
+            public Map<String, String> getStringUploads() {
+                Map<String, String> params = new HashMap<>();
+                params.put("params", "....");
+                return params;
+            }
+        };
+        multiPartRequest.setCookie();
+        RequestQueue requestQueue = Volley.newRequestQueue(this, new MultiPartStack());
+        requestQueue.add(multiPartRequest);
     }
+
+
 }

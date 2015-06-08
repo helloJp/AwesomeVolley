@@ -31,8 +31,8 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * @author ZhiCheng Guo
- * @version 2014年10月7日 上午11:00:52 这个Stack用于上传文件, 如果没有这个Stack, 则上传文件不成功
+ * package file/files for upload
+ * Created by JiangPing on 2015/6/4.
  */
 public class MultiPartStack extends HurlStack {
     @SuppressWarnings("unused")
@@ -75,7 +75,7 @@ public class MultiPartStack extends HurlStack {
 
 		/* Make a thread safe connection manager for the client */
         HttpClient httpClient = new DefaultHttpClient(httpParams);
-        
+
         return httpClient.execute(httpRequest);
     }
 
@@ -175,7 +175,6 @@ public class MultiPartStack extends HurlStack {
         Map<String, File> fileUpload = ((MultiPartRequest) request)
                 .getFileUploads();
         for (Map.Entry<String, File> entry : fileUpload.entrySet()) {
-
             builder.addPart(((String) entry.getKey()), new FileBody(
                     (File) entry.getValue()));
         }
