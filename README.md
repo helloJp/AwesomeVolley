@@ -22,7 +22,7 @@ dependencies {
 code is just like volley :
 ``` java
   String urlStr = ".....";
-        JsonObjectRequestWithCookie jsonObjectRequest = new JsonObjectRequestWithCookie(Request.Method.GET, urlStr, new Response.Listener<JSONObject>() {
+        JsonObjectRequestWithCookie jsonObjectRequest = new JsonObjectRequestWithCookie(getApplicationContext(), Request.Method.GET, urlStr, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
             }
@@ -38,11 +38,13 @@ code is just like volley :
         requestQueue.add(jsonObjectRequest);
 ```
 
+the first param I use "getApplicationContext()" because of net request is out of UI thread , if you still use activity's context It may cause nullpointer ,when you are finish your activity request may still exist.
+
 ##2.upload files in same time
 you can also put string params when you are uploading files .
 ``` java
 String urlStr = "......";
-        MultiPartJSONRequest multiPartRequest = new MultiPartJSONRequest(Request.Method.POST, urlStr, null,
+        MultiPartJSONRequest multiPartRequest = new MultiPartJSONRequest(getApplicationContext(), Request.Method.POST, urlStr, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
