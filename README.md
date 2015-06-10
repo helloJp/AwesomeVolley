@@ -1,6 +1,6 @@
 # Volley
-enhance volley with cookie &amp; upload files
-
+enhance volley with cookie &amp; upload files</br>
+扩展Volley，实现请求携带Cookie，一次请求上传单个文件、多个文件同时上传等。
 
 
 ### volley library has contained 3 http jar ( from http://hc.apache.org/ )
