@@ -38,7 +38,7 @@ code is just like volley :
         requestQueue.add(jsonObjectRequest);
 ```
 
-the first param I use "getApplicationContext()" because of net request is out of UI thread , if you still use activity's context It may cause nullpointer ,when you are finish your activity request may still exist.
+the first param I use " ##getApplicationContext()## " because of net request is out of UI thread. If you still use activity's context It may cause nullpointer ,when you are finish your activity request may still exist.
 
 ##2.upload files in same time
 you can also put string params when you are uploading files .
