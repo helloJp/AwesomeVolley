@@ -29,7 +29,7 @@ public class SampleActivity extends Activity {
 
     private void jsonRequestWithCookie() {
         String urlStr = ".....";
-        JsonObjectRequestWithCookie jsonObjectRequest = new JsonObjectRequestWithCookie(this, Request.Method.GET, urlStr, new Response.Listener<JSONObject>() {
+        JsonObjectRequestWithCookie jsonObjectRequest = new JsonObjectRequestWithCookie(getApplicationContext(), Request.Method.GET, urlStr, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
             }
@@ -47,7 +47,7 @@ public class SampleActivity extends Activity {
 
     private void batchUploadFiles() {
         String urlStr = "......";
-        MultiPartJSONRequest multiPartRequest = new MultiPartJSONRequest(this, Request.Method.POST, urlStr, null,
+        MultiPartJSONRequest multiPartRequest = new MultiPartJSONRequest(getApplicationContext(), Request.Method.POST, urlStr, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
