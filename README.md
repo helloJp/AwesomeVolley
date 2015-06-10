@@ -1,20 +1,20 @@
 # Volley
 enhance volley with cookie &amp; upload files
-Add Gradle dependency:
 
 
-### project has contained 3 jar
+
+### project has contained 3 jar ( from http://hc.apache.org/ )
 | Jar        |
 | --------   |
 | HttpClient 4.x |
 | HttpClient 4.x |  
 | HttpCore 4.x   |
-you can download from http://hc.apache.org/
 
+Add Gradle dependency:
 ```gradle
 dependencies {
    //wait.....
-  // compile ''
+
 }
 ```
 
