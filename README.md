@@ -3,7 +3,7 @@ enhance volley with cookie &amp; upload files
 
 
 
-### project has contained 3 jar ( from http://hc.apache.org/ )
+### volley library has contained 3 http jar ( from http://hc.apache.org/ )
 | Jar        |
 | --------   |
 | HttpClient 4.x |
